@@ -3,7 +3,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import sys
 
-with open("mailler.txt", "r") as file:
+with open("mailler.txt", "r") as file: #filename is veriable
     for i in file:
         liste = []
         i = i[:-1]
