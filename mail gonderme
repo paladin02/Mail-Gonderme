@@ -10,7 +10,7 @@ with open("mailler.txt", "r") as file:
         liste = i.split(",")
 
         mesaj = MIMEMultipart()
-        mesaj["From"] = "cemal.sora@gmail.com"
+        mesaj["From"] = "your_gmail"
         mesaj["To"] = liste[1]
         mesaj["Subject"] = "TOPLU MAİL"
         yazı = """
@@ -25,7 +25,7 @@ with open("mailler.txt", "r") as file:
             mail = smtplib.SMTP("smtp.gmail.com", 587)
             mail.ehlo()
             mail.starttls()
-            mail.login("cemal.sora@gmail.com", "theonder123")
+            mail.login("your_gmail", "your_passw")
             mail.sendmail(mesaj["From"], mesaj["To"], mesaj.as_string())
             print(liste[1] + "Başarılı iletildi")
         except:
