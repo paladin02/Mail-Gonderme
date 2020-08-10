@@ -14,7 +14,7 @@ with open("mailler.txt", "r") as file: #filename is veriable
         mesaj["To"] = liste[1]
         mesaj["Subject"] = "TOPLU MAİL"
         yazı = """
-            HAYAT CESURLARI SEVER
+            content your mail's
 
             """
 
