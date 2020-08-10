@@ -27,7 +27,7 @@ with open("mailler.txt", "r") as file: #filename is veriable
             mail.starttls()
             mail.login("your_gmail", "your_passw")
             mail.sendmail(mesaj["From"], mesaj["To"], mesaj.as_string())
-            print(liste[1] + "Başarılı iletildi")
+            print(liste[1] + "Sending Successful")
         except:
-            sys.stderr.write("İşlem gerçekleşmedi")
+            sys.stderr.write("Send Failed")
             sys.stderr.flush()
