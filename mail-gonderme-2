@@ -3,6 +3,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import sys
 from yeni import *
+
 giris = giris()
 mail = []
 pas = []
@@ -12,7 +13,6 @@ with open("mailler.txt", "r") as file:  # filename is veriable
         i = i[:-1]
         liste = i.split(",")
 
-        
         e = giris.email()
         c = giris.pas()
 
@@ -31,9 +31,9 @@ with open("mailler.txt", "r") as file:  # filename is veriable
             mail = smtplib.SMTP("smtp.gmail.com", 587)
             mail.ehlo()
             mail.starttls()
-            mail.login(e,c)
+            mail.login(e, c)
             mail.sendmail(mesaj["From"], mesaj["To"], mesaj.as_string())
-            print("Sending Successful")
+            print(liste[1] + "Sending Successful")
         except:
             sys.stderr.write("Send Failed")
             sys.stderr.flush()
