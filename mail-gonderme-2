@@ -2,21 +2,17 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import sys
-from configparser import ConfigParser
 from yeni import *
 giris = giris()
 mail = []
 pas = []
-with open("mailler.txt", "r") as file:  # filename is veriable
+with open("mailler.txt", "r+") as file:  # filename is veriable
     for i in file:
         liste = []
         i = i[:-1]
         liste = i.split(",")
 
-        file = "mail.ini"
-        config = ConfigParser()
-        config.read(file)
-
+        
         e = giris.email()
         c = giris.pas()
 
@@ -25,7 +21,7 @@ with open("mailler.txt", "r") as file:  # filename is veriable
         mesaj["To"] = liste[1]
         mesaj["Subject"] = "TOPLU MAİL"
         yazı = """
-            content your's mail
+            HAYAT CESURLARI SEVER
 
         """
 
