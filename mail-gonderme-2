@@ -6,7 +6,7 @@ from yeni import *
 giris = giris()
 mail = []
 pas = []
-with open("mailler.txt", "r+") as file:  # filename is veriable
+with open("mailler.txt", "r") as file:  # filename is veriable
     for i in file:
         liste = []
         i = i[:-1]
@@ -21,7 +21,7 @@ with open("mailler.txt", "r+") as file:  # filename is veriable
         mesaj["To"] = liste[1]
         mesaj["Subject"] = "TOPLU MAİL"
         yazı = """
-            HAYAT CESURLARI SEVER
+            content your mail's  
 
         """
 
