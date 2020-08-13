@@ -1,0 +1,35 @@
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+import sys
+import os
+while True:
+    mesaj = MIMEMultipart()
+    sender_email = input("Your Gmail Address : ")
+    mesaj["From"] = sender_email
+    file = input("which file do you want to choose : ")
+    with open(file, "r") as file:  # filename is veriable
+        for i in file:
+            liste = []
+            i = i[:-1]
+            liste = i.split(",")
+            print(liste[0])
+    mesaj["To"] = liste[0]
+    subject = input("Title Your Mail`s : ")
+    mesaj["Subject"] = subject
+    content = input("Content Your Mail`s : ")
+    mesajg = MIMEText(content, "plain")
+    mesaj.attach(mesajg)
+    try:
+        l_gmail = input("Enter Gmail Address : ")
+        p_gmail = input("Enter Gmail Password : ")
+        mail = smtplib.SMTP("smtp.gmail.com", 587)
+        mail.ehlo()
+        mail.starttls()
+        mail.login(l_gmail,p_gmail)
+        mail.sendmail(mesaj["From"], mesaj["To"], mesaj.as_string())
+        print("Sending Successful")
+    except:
+        print("Hata:", sys.exc_info()[0])
+        sys.stderr.flush()
+
