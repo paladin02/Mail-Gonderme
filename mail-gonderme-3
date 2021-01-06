@@ -30,4 +30,3 @@ while True:
     except:
         print("Hata:", sys.exc_info()[0])
         sys.stderr.flush()
-
